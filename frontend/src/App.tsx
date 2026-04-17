@@ -41,48 +41,7 @@ const BootScreen = () => {
   );
 };
 
-const CustomCursor = () => {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [isHovering, setIsHovering] = useState(false);
 
-  useEffect(() => {
-    // Only run on desktop
-    if (window.innerWidth <= 600 || 'ontouchstart' in window) return;
-
-    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
-    const checkHover = () => {
-      const el = document.elementFromPoint(pos.x, pos.y);
-      if (el && (el.tagName.toLowerCase() === 'button' || el.closest('button') || el.closest('.window-handle'))) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
-    
-    window.addEventListener('mousemove', move);
-    const interval = setInterval(checkHover, 50);
-    
-    return () => {
-      window.removeEventListener('mousemove', move);
-      clearInterval(interval);
-    };
-  }, [pos]);
-
-  if (window.innerWidth <= 600 || 'ontouchstart' in window) return null;
-
-  return (
-    <motion.div
-      className="custom-cursor"
-      animate={{
-        x: pos.x - 10, y: pos.y - 10,
-        scale: isHovering ? 2 : 1,
-        backgroundColor: isHovering ? 'var(--accent-color)' : 'transparent',
-        opacity: 0.8
-      }}
-      transition={{ duration: 0.1, ease: 'linear' }}
-    />
-  );
-};
 
 const EasterEgg = () => {
   const [show, setShow] = useState(false);
@@ -157,7 +116,6 @@ function App() {
       <AnimatePresence>
         {isBooting && <BootScreen />}
       </AnimatePresence>
-      <CustomCursor />
       <EasterEgg />
       <Desktop />
       <Taskbar />

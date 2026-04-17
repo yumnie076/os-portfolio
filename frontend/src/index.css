@@ -61,19 +61,7 @@ code, pre {
   overflow: hidden;
 }
 
-/* Custom Cursor class */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000;
-  mix-blend-mode: screen;
-}
+
 
 /* Ambient Particles container */
 .particles-container {

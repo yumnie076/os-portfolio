@@ -10,39 +10,7 @@ import { useStore } from '../../store';
 import { Cloud, Sun, CloudRain } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const AmbientParticles = () => {
-  const particles = Array.from({ length: 30 });
-  return (
-    <div className="particles-container">
-      {particles.map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: ['0vh', '-100vh'],
-            x: Math.random() * 200 - 100,
-            opacity: [0, 0.5, 0]
-          }}
-          transition={{
-            duration: 10 + Math.random() * 20,
-            repeat: Infinity,
-            delay: Math.random() * 10,
-            ease: "linear"
-          }}
-          style={{
-            position: 'absolute',
-            bottom: -10,
-            left: `${Math.random() * 100}vw`,
-            width: Math.random() * 4 + 2,
-            height: Math.random() * 4 + 2,
-            backgroundColor: i % 2 === 0 ? 'var(--accent-color)' : 'var(--secondary-color)',
-            borderRadius: '50%',
-            filter: 'blur(1px)'
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+
 
 const WeatherWidget = () => {
   const [weather, setWeather] = useState<{ temp: number, condition: number } | null>(null);
@@ -131,7 +99,6 @@ const Desktop = () => {
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: 'calc(100vh - 56px)', overflow: 'hidden' }}>
-      <AmbientParticles />
       <WeatherWidget />
       <WelcomeNotification />
       

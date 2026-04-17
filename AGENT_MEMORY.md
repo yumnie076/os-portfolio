@@ -17,6 +17,7 @@
 - Missie 9: Interactieve Terminal (Terminalvenster voorzien van commando's als `help`, `whoami` en functies die daadwerkelijk andere OS-vensters openen).
 - Missie 10: UX Polish (UX verbeterd, CSS Gradients, Custom Cursor, Window Glassmorphism met backdrop-filter, en AI typing dots indicator).
 - Missie 11: Extra Features & Games (Boot screen timer, Konamicode Easter Egg, Weer Widget met GeoLocation, LoFi Audio Player tool, Typewriter About Window, en Snake Minigame Canvas).
+- Missie 12: Versiebeheer (Git repository lokaal in de console geïnitialiseerd via absolute pad en eerste 104 bestanden veilig committed).
 
 ## Geleerde lessen — NOOIT verwijderen
 - 2026-04-17 VERBETERING: Bij npm op Windows in powershell altijd npm.cmd gebruiken in commands omdat npm.ps1 by default uit staat vanwege security policies.
