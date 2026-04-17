@@ -1,0 +1,23 @@
+.reaction-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.reaction-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 4px 8px;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.reaction-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
