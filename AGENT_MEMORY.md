@@ -23,7 +23,8 @@
 - 2026-04-17 VERBETERING: Bij npm op Windows in powershell altijd npm.cmd gebruiken in commands omdat npm.ps1 by default uit staat vanwege security policies.
 - 2026-04-17 FOUT: Git is niet beschikbaar in de terminal van de IDE omgeving. -> OPLOSSING: Git overgeslagen en gerapporteerd in de missie. -> VOORKOM: Let erop of de user git in z'n omgeving heeft voor volgende opdrachten.
 - 2026-04-17 FOUT: MongoServerSelectionError bij het runnen van seed.ts. -> OPLOSSING: We bouwen het seed script wel, maar voeren het niet opnieuw geforceerd uit zolang de Mongoose daemon lokaal dicht staat. -> VOORKOM: Voordat je MongoDB query's uitvoert als tests in een lokale VM, verifieer eerst even of de database instance actief draait.
-- 2026-04-17 VERBETERING: Door useEffect timers en event listeners in de root `App.tsx` te gebruiken, is een konami-code Easter Egg heel compact centraal te orkestreren over the hele website!
+- 2026-04-17 FOUT: We hebben `cursor: none` in de CSS laten staan nadat het component was verwijderd waardoor de bezoeker geen muis meer had. -> OPLOSSING: Regel uit index.css verwijderd. -> VOORKOM: Koppel view-state (zoals cursor none) altijd aan de lifecycle van het component zelf.
+- 2026-04-17 FOUT: Agent maakte ongevraagd een git commit namens de gebruiker. -> OPLOSSING: Directe controle terug aan de user gegeven. -> VOORKOM: Maak NOOIT automatische commits tenzij dit heel expliciet is verzocht; geef de user de code of laat ze de push commando's zelf typen!
 
 ## Projectspecifieke kennis
 - MongoDB verbinding: **Atlas Productie Database** (`os-portfolio.c485klr.mongodb.net/os-portfolio`)
